@@ -125,6 +125,7 @@
 
 
 </style>
+
 </head>
 
 <body>
@@ -140,7 +141,7 @@
       <h1>Wings Army Marti</h1>
 
       <div class="subtitle">
-        Bienvenidos al Cuartel &nbsp; Servicio a Domicilio al WhatsApp
+        Bienvenidos al Cuartel <br> Servicio a Domicilio al WhatsApp
       </div>
 
       <div class="divider"></div>
@@ -167,8 +168,8 @@
     </div>
   </div>
 
-<div class="whatsapp-container">
-  <span>Contáctanos</span>
+<div class="whatsapp-container" id="whatsapp-btn">
+  <span id="contactanos">Contáctanos</span>
   <svg class="wa-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
     <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0
       7.9 7.9 0 0 0 .068 7.926c0 1.399.366 2.76 
@@ -184,6 +185,25 @@
   </svg>
 </div>
 
+  <script>
+    // Reemplaza por tu número en formato internacional, SIN +, espacios ni guiones
+    const phoneNumber = '5212291093261'; // 52(MX) + número
 
+    // Mensaje inicial (lo codificamos para URL)
+    const initialMessage = encodeURIComponent('Hola, me interesa más información sobre sus servicios.');
+
+    const btn = document.getElementById('whatsapp-btn');
+    const btn2 = document.getElementById('contactanos');
+
+    btn2.addEventListener('click', () => {
+      const waUrl = `https://wa.me/${phoneNumber}?text=${initialMessage}`;
+      window.open(waUrl, '_blank');
+    });
+
+    btn.addEventListener('click', () => {
+      const waUrl = `https://wa.me/${phoneNumber}?text=${initialMessage}`;
+      window.open(waUrl, '_blank');
+    });
+  </script>
 </body>
 </html>
